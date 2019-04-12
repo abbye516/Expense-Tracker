@@ -1,13 +1,21 @@
 const express = require('express')
 const app = express()
-const port = process.env.PORT || 6000
+const port = process.env.PORT || 8000
 const bodyParser = require('body-parser')
-
+const path = require('path')
 const mongoose = require('mongoose')
+const Transaction = require('./Server/Models/TransactionModel')
+const routes = require('./Server/Routes/Routes')
+const transactionData = require('./src/dummyData')
 const Schema = mongoose.Schema
+
+// app.use(express.static(path.join(__dirname, 'src')))
+// app.use(express.static(path.join(__dirname, 'node_modules')))
+
 
 app.use(bodyParser.urlencoded({ extended: false }))
 app.use(bodyParser.json())
+
 mongoose.connect('mongodb://localhost/transactions', { useNewUrlParser: true })
 
 app.use(function (req, res, next) {
@@ -17,13 +25,15 @@ app.use(function (req, res, next) {
     next()
 })
 
+app.use('/', routes)
 
+const saveData = () =>{
+    for(let transaction of transactionData ){
+        let newTransaction = new Transaction (transaction)
+        newTransaction.save()
+    }
+}
+// saveData()
 
-app.get('/transactions', (req, res) => {
-    res.send({ express: 'YOUR EXPRESS BACKEND IS CONNECTED TO REACT' });
-});
-// app.post('http://localhost:5000/transaction'), (req, res) =>{
-//     res.send("hello")
-// }
 
 app.listen(port, () => console.log(`Listening on port ${port}`));

@@ -9,10 +9,3 @@ const transactionSchema = new Schema({
 const Transaction = mongoose.model('Transaction', transactionSchema);
 module.exports = Transaction;
 
-let trans = new Transaction({
-    amount: 10,
-    category: "clothes",
-    vendor: "castro"
-})
-
-console.log(trans)

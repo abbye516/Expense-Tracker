@@ -1,0 +1,16 @@
+[
+    {
+      "amount": 10,
+      "category": "Food",
+      "vendor": "McDonalds"
+    },
+    {
+        "amount": -110,
+        "category": "Clothes",
+        "vendor": "Castro"
+      },  {
+        "amount": 1000,
+        "category": "Vacation",
+        "vendor": "Bahamas"
+      }
+]
