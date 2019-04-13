@@ -3,8 +3,9 @@ import './App.css';
 import { BrowserRouter as Router, Route, Link } from 'react-router-dom'
 import Operations from './Components/Operations';
 import Transactions from './Components/Transactions';
+import { observer } from 'mobx-react'
 
-
+@observer
 class App extends Component {
   constructor() {
     super()
