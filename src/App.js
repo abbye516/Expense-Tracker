@@ -33,6 +33,7 @@ class App extends Component {
     return (
       <Router>
         <div >
+          
           <h1 >Expense Tracker</h1>
           <div>
             Balance: ${this.currentBalance()}
