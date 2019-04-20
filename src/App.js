@@ -5,6 +5,7 @@ import Operations from './Components/Operations';
 import Transactions from './Components/Transactions';
 import { observer } from 'mobx-react'
 
+
 @observer
 class App extends Component {
   constructor() {
@@ -33,7 +34,7 @@ class App extends Component {
     return (
       <Router>
         <div >
-          
+
           <h1 >Expense Tracker</h1>
           <div>
             Balance: ${this.currentBalance()}

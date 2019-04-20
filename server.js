@@ -13,8 +13,15 @@ const Schema = mongoose.Schema
 // app.use(express.static(path.join(__dirname, 'node_modules')))
 
 
-app.use(bodyParser.urlencoded({ extended: false }))
-app.use(bodyParser.json())
+//testing:: 
+app.use(bodyParser.urlencoded({ extended: true }));
+app.use(bodyParser.json());
+
+//testing:
+//app.use(require("body-parser").json());
+
+// app.use(bodyParser.urlencoded({ extended: false }))
+// app.use(bodyParser.json())
 
 mongoose.connect('mongodb://localhost/transactions', { useNewUrlParser: true })
 
